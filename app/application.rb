@@ -7,11 +7,11 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     if req.path.match(/items/)
-      item = req.path.split("/items/").last #turn /songs/Sorry into Sorry
-       if item == @@items.find{|i| i.name == item
+      item = req.path.split("/items/").last 
+       if item == @@items.find{|i| i.name == item}
          item.price
         binding.pry
-         else
+       else
          resp.write "Couldn't find item"
          resp.status = 400
        end
