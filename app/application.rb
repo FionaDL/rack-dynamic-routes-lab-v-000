@@ -10,7 +10,7 @@ class Application
       item = req.path.split("/items/").last
        binding.pry
        if item == @@items.find{|i| i.name == item}
-         item.price
+         resq.write.price
        else
          resp.write "Couldn't find item"
          resp.status = 400
