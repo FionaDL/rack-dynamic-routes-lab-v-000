@@ -9,6 +9,7 @@ class Application
     if req.path.match(/items/)
         this_item = req.path.split("/items/").last
          if @@items.include?(this_item)
+           binding.pry
            resp.write "This #{this_item.name} costs #{new_item.price}"
          else
          resp.write "Couldn't find item"
