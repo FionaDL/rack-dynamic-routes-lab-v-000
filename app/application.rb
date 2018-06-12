@@ -7,7 +7,7 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
     if req.path.match(/items/)
-        this_item = req.path.split("/items/").last
+        this_item = req.params["item"]
         binding.pry
          if @@items.include?(this_item)
            resp.write "This #{this_item.name} costs #{new_item.price}"
