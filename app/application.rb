@@ -8,8 +8,8 @@ class Application
     req = Rack::Request.new(env)
     if req.path.match(/items/)
         this_item = req.path.split("/items/").last
+        learn
          if @@items.include?(this_item)
-           binding.pry
            resp.write "This #{this_item.name} costs #{new_item.price}"
          else
          resp.write "Couldn't find item"
