@@ -9,11 +9,8 @@ class Application
     if req.path.match(/items/)
       item = req.path.split("/items/").last #turn /songs/Sorry into Sorry
        if item == @@items.find{|i| i.name == item
-
-        resp.write song.artist
+         item.price
         binding.pry
-         if @@items.include?(this_item)
-           resp.write "This #{this_item} costs #{this_item}"
          else
          resp.write "Couldn't find item"
          resp.status = 400
